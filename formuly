@@ -1,0 +1,138 @@
+install.packages("mgcv")
+library(mgcv)
+library(readxl)
+library(openxlsx) 
+library(ggplot2) 
+library(plotly)
+m10 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 1) 
+names(m10)[names(m10) == "q.[dm3/(s.ha)]"] <- "q"
+m20 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 2) 
+names(m20)[names(m20) == "q.[dm3/(s.ha)]"] <- "q"
+m30 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 3) 
+names(m30)[names(m30) == "q.[dm3/(s.ha)]"] <- "q"
+m60 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 4) 
+names(m60)[names(m60) == "q.[dm3/(s.ha)]"] <- "q"
+m90 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 5) 
+names(m90)[names(m90) == "q.[dm3/(s.ha)]"] <- "q"
+m120 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 6) 
+names(m120)[names(m120) == "q.[dm3/(s.ha)]"] <- "q"
+m150 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 7) 
+names(m150)[names(m150) == "q.[dm3/(s.ha)]"] <- "q"
+m180 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 8) 
+names(m180)[names(m180) == "q.[dm3/(s.ha)]"] <- "q"
+m210 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 9)
+names(m210)[names(m210) == "q.[dm3/(s.ha)]"] <- "q"
+m240 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 10) 
+names(m240)[names(m240) == "q.[dm3/(s.ha)]"] <- "q"
+m270 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 11) 
+names(m270)[names(m270) == "q.[dm3/(s.ha)]"] <- "q"
+m300 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 12) 
+names(m300)[names(m300) == "q.[dm3/(s.ha)]"] <- "q"
+m330 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 13)
+names(m330)[names(m330) == "q.[dm3/(s.ha)]"] <- "q"
+m360 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 14) 
+names(m360)[names(m360) == "q.[dm3/(s.ha)]"] <- "q"
+m390 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 15)
+names(m390)[names(m390) == "q.[dm3/(s.ha)]"] <- "q"
+m420 <- read.xlsx ("zestawienie_matemblewo.xlsx", sheet = 16) 
+names(m420)[names(m420) == "q.[dm3/(s.ha)]"] <- "q"
+
+plot(q~p, data = m10)
+logEstimate = lm(q ~ log(p), data = m10)  # w R log = ln
+coef(logEstimate)
+# q = 22.70455 - 45.66805log(p)
+
+plot(q~p, data = m20)
+logEstimate = lm(q ~ log(p), data = m20) 
+coef(logEstimate)
+ # q = 17.16477 -32.72350log(p)
+
+plot(q~p, data = m30)
+logEstimate = lm(q ~ log(p), data = m30) 
+coef(logEstimate)
+
+# q = 15.45008 -23.83923log(p)
+
+plot(q~p, data = m60)
+logEstimate = lm(q ~ log(p), data = m60) 
+coef(logEstimate)
+
+# q = 12.76320 -13.36945log(p)
+
+plot(q~p, data = m90)
+logEstimate = lm(q ~ log(p), data = m90) 
+coef(logEstimate)
+
+# q = 11.11388 -10.38641log(p)
+
+plot(q~p, data = m120)
+logEstimate = lm(q ~ log(p), data = m120) 
+coef(logEstimate)
+
+# q = 7.682251 -10.721082log(p)
+
+plot(q~p, data = m150)
+logEstimate = lm(q ~ log(p), data = m150) 
+coef(logEstimate)
+
+# q = 5.883907 -10.638917log(p)
+
+plot(q~p, data = m180)
+logEstimate = lm(q ~ log(p), data = m180) 
+coef(logEstimate)
+
+# q = 4.880651 -10.324337log(p)
+
+plot(q~p, data = m210)
+logEstimate = lm(q ~ log(p), data = m210) 
+coef(logEstimate)
+
+# q = 3.551918 -10.676212log(p)
+
+plot(q~p, data = m240)
+logEstimate = lm(q ~ log(p), data = m240) 
+coef(logEstimate)
+
+# q = 7.004250 -4.881349log(p)
+
+plot(q~p, data = m270)
+logEstimate = lm(q ~ log(p), data = m270) 
+coef(logEstimate)
+
+# q = 6.701211 -4.411861log(p)
+
+plot(q~p, data = m270)
+logEstimate = lm(q ~ log(p), data = m270) 
+coef(logEstimate)
+
+# q = 6.701211 -4.411861log(p)
+
+plot(q~p, data = m300)
+logEstimate = lm(q ~ log(p), data = m300) 
+coef(logEstimate)
+
+# q = 6.27040 -4.33118log(p)
+
+plot(q~p, data = m330)
+logEstimate = lm(q ~ log(p), data = m330) 
+coef(logEstimate)
+
+# q = 5.734721 -4.484268log(p)
+
+plot(q~p, data = m360)
+logEstimate = lm(q ~ log(p), data = m360) 
+coef(logEstimate)
+
+# q = 5.974374 -3.464781log(p)
+
+plot(q~p, data = m390)
+logEstimate = lm(q ~ log(p), data = m390) 
+coef(logEstimate)
+
+# q = 5.696176 -3.007265log(p)
+
+plot(q~p, data = m420)
+logEstimate = lm(q ~ log(p), data = m420) 
+coef(logEstimate)
+
+# q = 5.250918 -4.927779log(p)
